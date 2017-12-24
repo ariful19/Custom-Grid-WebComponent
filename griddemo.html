@@ -9,41 +9,14 @@
 </head>
 
 <body>
-    <c-grid cols='5'>
+    <c-grid cols='5' style="height: 400px;width: 400px">
         <div cols='1 / 2' rows='1 / 2' style="background-color: rgba(255, 0, 0, 0.253);"> div1</div>
-        <div cols='2 / 5' rows='2 / 4' style="background-color: rgba(128, 128, 128, 0.267);height:5em">div0</div>
-        <div cols='1 / 6' rows='2 / 5' style="background-color: rgba(255, 255, 0, 0.384);">div2</div>
-        <div cols='2 / 6' rows='1 / 4' style="background-color: rgba(0, 183, 255, 0.384);">div3</div>
-        <div cols='3 / 6' rows='4 / 4' style="background-color: rgba(0, 255, 64, 0.384);">div3</div>
+        <div cols='2 / 5' rows='2 / 4' style="background-color: rgba(128, 128, 128, 0.267);height:5em">div2</div>
+        <div cols='1 / 6' rows='2 / 5' style="background-color: rgba(255, 255, 0, 0.384);">div3</div>
+        <div cols='2 / 6' rows='1 / 4' style="background-color: rgba(0, 183, 255, 0.384);">div4</div>
+        <div cols='3 / 6' rows='4 / 4' style="background-color: rgba(0, 255, 64, 0.384);">div5</div>
     </c-grid>
-
-    <script>
-        class CompGrid extends HTMLElement {
-            constructor() {
-                super()
-                this.init()
-            }
-
-            init() {
-                let cols = parseInt(this.getAttribute('cols'));
-                let minheightattr = this.getAttribute('row-min-height');
-                let minh = minheightattr ? minheightattr : "10px";
-                this.style =
-                    `
-            display: grid;
-            grid-template-columns: repeat(${cols}, 1fr);
-            grid-auto-rows: minmax(${minh}, auto);
-        `
-                this.querySelectorAll('[cols][rows]').forEach(function (v) {
-                    let colstxt = v.getAttribute("cols")
-                    let rowstxt = v.getAttribute("rows")
-                    let s = v.getAttribute('style');
-                    s = s && !s.endsWith(';') ? s + ";" : s;
-                    v.setAttribute('style', (s ? s : "") + " grid-column:" + colstxt + ";" + " grid-row:" + rowstxt + ";")
-                });
-            }
-        }
-        window.customElements.define('c-grid', CompGrid);
+    <script src="grid.js">
     </script>
 </body>
 
