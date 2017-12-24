@@ -19,7 +19,7 @@ A simple grid web-component implements CSS3 grid system from behind.
 ```
 This html should produce
 
-![alt text](https://github.com/ariful19/CustomeGridWebComponent/blob/master/preview.PNG "grid preview")
+![alt text](https://github.com/ariful19/CustomeGridWebComponent/blob/master/preview1.PNG "grid preview")
 
 Just defin a grid with column count in `cols-def='<number>'`
 ```html
