@@ -5,7 +5,7 @@
             }
 
             init() {
-                let cols = parseInt(this.getAttribute('cols'));
+                let cols = parseInt(this.getAttribute('cols-def'));
                 let minheightattr = this.getAttribute('row-min-height');
                 let minh = minheightattr ? minheightattr : "10px";
                 let rootStyle = this.getAttribute('style');
