@@ -2,7 +2,7 @@
 A simple grid web-component implements CSS3 grid system from behind.
 
 ```html
-        <c-grid cols-def='5' style="height: 400px;width: 400px">
+     <c-grid cols-def='5' style="height: 400px;width: 400px">
         <div cols='1 / 2' rows='1 / 2' style="background-color: rgba(255, 0, 0, 0.253);"> div1</div>
         <div cols='2 / 5' rows='2 / 4' style="background-color: rgba(128, 128, 128, 0.267);height:5em;z-index: 1;">div2</div>
         <div cols='1 / 6' rows='2 / 5' style="background-color: rgba(255, 255, 0, 0.384);">div3</div>
@@ -20,3 +20,14 @@ A simple grid web-component implements CSS3 grid system from behind.
 This html should produce
 
 ![alt text](https://github.com/ariful19/CustomeGridWebComponent/blob/master/preview.PNG "grid preview")
+
+Just defin a grid with column count in `cols-def='<number>'`
+```html
+        <c-grid cols-def='5'>
+        ...
+        </c-grid>
+```
+Define location of immidiate child using `cols` and `rows` attributes. `cols='1 / 4' rows='1 / 2'` means that it starts from first column and continues untile fourth column. It starts from first row and ends in second row.
+
+We don't need to define rows first. Rows will be added automatically.
+
