@@ -1,4 +1,4 @@
-# Custome Grid WebComponent
+# Custom Grid WebComponent
 A simple grid web-component implements CSS3 grid system from behind.
 
 ```html
