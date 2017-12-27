@@ -3,9 +3,28 @@ class CompGrid extends HTMLElement {
         super()
         this.init()
     }
-
+    getScreenSizeShortHand() {
+        let scr = screen.width;
+        return scr >= 1200 ? 'xl' :
+            scr >= 960 ? 'lg' :
+                scr >= 720 ? 'md' :
+                    scr >= 540 ? 'sm' :
+                        'xs';
+    }
+    getMinScreenSizeByShortHand(shorthand) {
+        return shorthand == 'xl' ? 1200 :
+            shorthand == 'lg' ? 960 :
+                shorthand == 'md' ? 720 :
+                    shorthand == 'sm' ? 540 :
+                        0;
+    }
     init() {
-        let cols = parseInt(this.getAttribute('cols-def'));
+        let colsxl = parseInt(this.getAttribute('cols-def-xl'));
+        let colslg = parseInt(this.getAttribute('cols-def-lg'));
+        let colsmd = parseInt(this.getAttribute('cols-def-md'));
+        let colssm = parseInt(this.getAttribute('cols-def-sm'));
+        let colsxs = parseInt(this.getAttribute('cols-def-xs'));
+
         let minheightattr = this.getAttribute('row-min-height');
         let minh = minheightattr ? minheightattr : "10px";
         let rootStyle = this.getAttribute('style');
@@ -30,4 +49,4 @@ class CompGrid extends HTMLElement {
 
     }
 }
-    window.customElements.define('c-grid', CompGrid);
+window.customElements.define('c-grid', CompGrid);
