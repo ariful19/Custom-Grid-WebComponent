@@ -30,4 +30,4 @@ class CompGrid extends HTMLElement {
 
     }
 }
-window.customElements.define('c-grid', CompGrid);
+    window.customElements.define('c-grid', CompGrid);
