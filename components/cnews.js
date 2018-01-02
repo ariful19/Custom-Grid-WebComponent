@@ -22,11 +22,6 @@ let style =
 .animated{
     animation: movetoleft :times infinite linear;
 }
-span{
-    width: auto;
-    white-space: nowrap;
-    margin-left:30px
-}
 `
 
 class CNews extends HTMLElement {
@@ -43,6 +38,9 @@ class CNews extends HTMLElement {
         let w = 0;
         for (let index = 0; index < spans.length; index++) {
             const element = spans.item(index);
+            element.setAttribute('style',` width: auto;
+            white-space: nowrap;
+            margin-left:30px`);
             w += element.getBoundingClientRect().width + 15;
         }
         cont.style.width = w + 'px'
@@ -64,6 +62,9 @@ if (window.customElements) {
     let w = 0;
     for (let index = 0; index < spans.length; index++) {
         const element = spans.item(index);
+        element.setAttribute('style',` width: auto;
+        white-space: nowrap;
+        margin-left:30px`);
         w += element.getBoundingClientRect().width + 15;
     }
     cont.style.width = w + 'px'
